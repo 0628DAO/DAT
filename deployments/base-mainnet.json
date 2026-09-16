@@ -1,0 +1,21 @@
+{
+  "network": "Base Mainnet",
+  "chainId": 8453,
+  "contractName": "DATCore",
+  "tokenName": "DATCORE",
+  "symbol": "DAT",
+  "contractAddress": "0x6c83dd253F2F882B9884Fd1ac3A7754ED6405de5",
+  "deployer": "0xfbE494B465efe6d0DAFf80dC715302D0Fa0Ac5d9",
+  "initialHolder": "0xfbE494B465efe6d0DAFf80dC715302D0Fa0Ac5d9",
+  "constructorArguments": [
+    "0xfbE494B465efe6d0DAFf80dC715302D0Fa0Ac5d9"
+  ],
+  "deploymentBlock": 51281431,
+  "deployedAt": "2026-09-14T02:16:49Z",
+  "compiler": "v0.8.34+commit.80d5c536",
+  "evmVersion": "default",
+  "optimizerEnabled": false,
+  "verification": "Blockscout exact match",
+  "deploymentTransaction": "0x49cb417f0231eb149d60bcc471d0676a0643eb5cfc319741d8452c6e5d9cb589",
+  "verifiedSource": "https://base.blockscout.com/address/0x6c83dd253F2F882B9884Fd1ac3A7754ED6405de5?tab=contract"
+}

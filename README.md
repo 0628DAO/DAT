@@ -2,7 +2,7 @@
 
 **Repository status:** Public testnet release candidate / locally tested / unaudited  
 **Test network:** Base Sepolia (chain ID `84532`)  
-**Maintainer:** 0628DAO / AssetDeploy LLC
+**Maintainer:** 0628DAO / AssetDeploy LLC (アセットデプロイ合同会社)
 
 This repository publishes the DATCORE fixed-supply ERC-20 source and a guarded
 Base Sepolia deployment path. It is intended for public testnet validation of
@@ -25,8 +25,12 @@ from the base token.
 | Permit | EIP-2612 |
 | Owner / admin / pause / upgrade / proxy | None |
 
-The source in [`contracts/DATCore.sol`](contracts/DATCore.sol) matches the
-verified DATCORE source published for the live Base Mainnet contract.
+The source in [`contracts/DATCore.sol`](contracts/DATCore.sol) exactly matches
+the DATCORE source verified by Blockscout for the live Base Mainnet contract.
+The match was rechecked against Blockscout's published source on September 17,
+2026. The verified build uses Solidity `0.8.34`, the compiler-default EVM
+version, and no optimizer. The source pragma remains `^0.8.24` because it is
+part of that exact verified source.
 
 ## Official Base Mainnet reference
 
@@ -35,10 +39,19 @@ verified DATCORE source published for the live Base Mainnet contract.
 | Network | Base Mainnet (chain ID `8453`) |
 | Contract | [`0x6c83dd253F2F882B9884Fd1ac3A7754ED6405de5`](https://base.blockscout.com/address/0x6c83dd253F2F882B9884Fd1ac3A7754ED6405de5?tab=contract) |
 | Deployment transaction | [`0x49cb…b589`](https://base.blockscout.com/tx/0x49cb417f0231eb149d60bcc471d0676a0643eb5cfc319741d8452c6e5d9cb589) |
+| Initial holder / deployer | `0xfbE494B465efe6d0DAFf80dC715302D0Fa0Ac5d9` |
+| Deployment block | `51281431` |
+| Deployed at | `2026-09-14 02:16:49 UTC` |
+| Verification | Blockscout exact match |
 | Deployment record | [`deployments/base-mainnet.json`](deployments/base-mainnet.json) |
 
 Always verify the full network and contract address. A Base Sepolia address is
 not the Base Mainnet token address and testnet DAT has no production status.
+
+At deployment, the complete fixed supply was minted to the initial-holder
+address shown above. The token contract contains no vesting or lock mechanism.
+Any later allocation, liquidity, or custody activity occurs outside the base
+token contract and must be evaluated from current on-chain records.
 
 ## Local verification
 
@@ -51,23 +64,33 @@ npm run check
 
 The test suite covers token metadata, the fixed supply, initial allocation,
 zero-address protection, transfers, allowances, `transferFrom`, holder burns,
-allowance-based burns, unauthorized-burn rejection, EIP-2612 nonce support,
-and the absence of administrator mint, pause, upgrade, owner, and admin entry
-points.
+allowance-based burns, unauthorized-burn rejection, EIP-2612 signed permits,
+expired and replayed permit rejection, EIP-712 domain data, and the absence of
+administrator mint, pause, upgrade, owner, and admin entry points.
 
 ## Base Sepolia deployment
 
-1. Copy `.env.example` to `.env` and use a dedicated testnet key.
-2. Fund only that testnet address with Base Sepolia ETH.
-3. Run:
+1. Use a dedicated testnet wallet. Never reuse a production key.
+2. Store the RPC URL and private key in Hardhat's encrypted keystore:
+
+```shell
+npx hardhat keystore set BASE_SEPOLIA_RPC_URL
+npx hardhat keystore set BASE_SEPOLIA_PRIVATE_KEY
+```
+
+3. Fund only that testnet address with Base Sepolia ETH.
+4. Run:
 
 ```shell
 npm run deploy:base-sepolia
 ```
 
-The deployment script refuses any chain other than Base Sepolia (`84532`) and
-rejects an invalid or zero initial-holder address. When `INITIAL_HOLDER` is not
-set, the deployer receives the complete test supply.
+The deployment script refuses any chain other than Base Sepolia (`84532`),
+rejects an invalid or zero initial-holder address, and checks the deployed
+bytecode, total supply, and initial-holder balance. When `INITIAL_HOLDER` is not
+set, the deployer receives the complete test supply. `INITIAL_HOLDER` is a
+public address, not a secret; set it in the current shell only when a separate
+recipient is required.
 
 No private key, seed phrase, API secret, or funded production credential should
 ever be committed to this repository.
@@ -93,10 +116,9 @@ future patent rights.
 ## Official channels
 
 - Website: [assetdeploy.xyz](https://assetdeploy.xyz)
-- DATCORE page: [datcore-official.kurodamasashi1961.chatgpt.site](https://datcore-official.kurodamasashi1961.chatgpt.site)
+- DATCORE page: [assetdeploy.xyz/#datcore](https://assetdeploy.xyz/#datcore)
 - GitHub: [0628DAO](https://github.com/0628DAO)
 - X: [@CAWmunityJAPAN](https://x.com/CAWmunityJAPAN)
 - Contact: [info@assetdeploy.xyz](mailto:info@assetdeploy.xyz)
 
-© 0628DAO / AssetDeploy LLC. Released under the MIT License.
-
+© AssetDeploy LLC (アセットデプロイ合同会社). Released under the MIT License.

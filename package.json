@@ -1,0 +1,35 @@
+{
+  "name": "@0628dao/datcore",
+  "version": "0.1.0",
+  "description": "DATCORE fixed-supply ERC-20 and Base Sepolia testnet publication",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test nodejs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run compile && npm run test && npm run typecheck",
+    "deploy:base-sepolia": "hardhat run scripts/deploy-base-sepolia.ts --network baseSepolia"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.6.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-node-test-runner": "3.1.0",
+    "@nomicfoundation/hardhat-viem": "3.0.9",
+    "@types/node": "22.8.5",
+    "hardhat": "3.16.0",
+    "solc": "0.8.34",
+    "typescript": "6.0.3",
+    "viem": "2.56.6"
+  },
+  "overrides": {
+    "solc": {
+      "tmp": "0.2.7"
+    }
+  }
+}

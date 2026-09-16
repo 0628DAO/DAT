@@ -1,0 +1,26 @@
+# Dependencies
+/node_modules
+
+# Hardhat output
+/artifacts
+/cache
+/coverage
+/types
+
+# TypeScript output
+/dist
+
+# Environment files and deployment secrets
+.env
+.env.*
+!.env.example
+
+# Hardhat keystore data
+/.hardhat-keystore.json
+
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
