@@ -1,0 +1,72 @@
+{
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "contractName": "DATCore",
+  "tokenName": "DATCORE",
+  "symbol": "DAT",
+  "decimals": 18,
+  "initialSupply": "1000000000000000000000000000",
+  "contractAddress": "0x2474A062Ec669C1912Ed41Bc491E8a97db4743D4",
+  "deployer": "0x7883F44CCf5c7a7F609DaB2bbeC039A44E824cde",
+  "initialHolder": "0x7883F44CCf5c7a7F609DaB2bbeC039A44E824cde",
+  "constructorArguments": [
+    "0x7883F44CCf5c7a7F609DaB2bbeC039A44E824cde"
+  ],
+  "deploymentBlock": 46922780,
+  "deployedAt": "2026-09-17T02:57:28Z",
+  "compiler": "v0.8.34+commit.80d5c536",
+  "evmVersion": "default",
+  "optimizerEnabled": false,
+  "contractReleaseCommit": "732cac5af6c09df6c254b43b0b878b97206af7e6",
+  "deploymentToolingCommit": "0c00c38317eff6b9e91d888cdca774a5ac831c91",
+  "contractSourceSha256": "685a1ae60d561c5a5edeee2ff6cc6c2500c88bd54e110f3e295cc5d025de19e6",
+  "creationBytecodeKeccak256": "0x360eb0d90955f2a5d059d400229520cbc24a72c8d461fd8725b12309b99b3294",
+  "runtimeBytecodeKeccak256": "0xdd8d491f8526e23a5951c5cbc627d07b31fa57f2433375d2453bad22423981f5",
+  "immutableNormalizedRuntimeBytecodeKeccak256": "0x6567224d1e46c8e80d345970cf59ed9dcd8949ff00cb873884e9a0decf377e64",
+  "deploymentTransaction": "0xa78311374ff4aa6c871f885301c170a33394c90ba494f2c5eebb12279c6ddc55",
+  "deploymentGasUsed": "1808447",
+  "explorer": {
+    "contract": "https://base-sepolia.blockscout.com/address/0x2474A062Ec669C1912Ed41Bc491E8a97db4743D4?tab=contract",
+    "deploymentTransaction": "https://base-sepolia.blockscout.com/tx/0xa78311374ff4aa6c871f885301c170a33394c90ba494f2c5eebb12279c6ddc55",
+    "sourceVerified": true,
+    "fullyVerified": false,
+    "verifiedAt": "2026-09-17T03:00:26.598608Z"
+  },
+  "dappUrl": "https://0628dat.xyz",
+  "postDeploymentValidation": {
+    "validatedAt": "2026-09-17T03:01:00Z",
+    "recipient": "0xfbE494B465efe6d0DAFf80dC715302D0Fa0Ac5d9",
+    "transactions": {
+      "transfer": "0x89e020110f4341da216813aa060e89aef548b9e50879081b1ff2e95bc454d5e4",
+      "burn": "0xe3b6a8047397a8e4055b1b359dd1e52d04d7bf60dde4d6eae07f72b4876241ad",
+      "permit": "0x20b0eefee71e9f55bc3c78a859f857e1f1634b1a0dc95d3570f468225e40fd25",
+      "transferFrom": "0x61ffa7ffde513617ed6a5bfa6505e5a062bee9a0d5370a88498c1a00248f2ec3",
+      "burnFrom": "0x3b9e9cf272783cf4acfc23bf3f9a325eda17b8e58d55cf94f463d56304388dc6"
+    },
+    "transactionBlocks": {
+      "transfer": 46922885,
+      "burn": 46922885,
+      "permit": 46922885,
+      "transferFrom": 46922886,
+      "burnFrom": 46922886
+    },
+    "amounts": {
+      "directTransfer": "1000000000000000000",
+      "directBurn": "1000000000000000000",
+      "permit": "2000000000000000000",
+      "allowanceTransfer": "1000000000000000000",
+      "allowanceBurn": "1000000000000000000"
+    },
+    "finalState": {
+      "totalSupply": "999999998000000000000000000",
+      "deployerBalance": "999999996000000000000000000",
+      "recipientBalance": "2000000000000000000",
+      "deployerPermitNonce": "1",
+      "remainingSelfAllowance": "0"
+    },
+    "negativePathEthCall": {
+      "replayedPermitRejected": true,
+      "zeroAddressTransferRejected": true
+    }
+  }
+}
