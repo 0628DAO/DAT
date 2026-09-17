@@ -6,7 +6,6 @@ This directory contains the English-only official website source for
 ## Files
 
 - `index.html` — complete responsive website
-- `deploy-wordpress.mjs` — WordPress REST deployment helper
 - `robots.txt` — crawler policy
 - `sitemap.xml` — canonical homepage sitemap
 
