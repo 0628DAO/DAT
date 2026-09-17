@@ -10,32 +10,23 @@ This directory contains the English-only official website source for
 - `robots.txt` — crawler policy
 - `sitemap.xml` — canonical homepage sitemap
 
-## WordPress deployment
+## XServer deployment
 
-Requirements:
+The production deployment does not require WordPress access.
 
-- Node.js 22 or newer
-- a WordPress administrator username
-- a dedicated WordPress Application Password
+Upload these files to the document root for `0628dao.xyz`:
 
-Never use an account password in the command and never commit credentials.
+- `index.html`
+- `robots.txt`
+- `sitemap.xml`
 
-Run a read-only connection check:
+Keep the existing WordPress installation in place. XServer serves `index.html`
+before the existing WordPress `index.php`, so the official static website can
+replace the public Coming Soon page without deleting WordPress data.
 
-```shell
-WP_USERNAME="your-admin-user" \
-WP_APPLICATION_PASSWORD="your-application-password" \
-node website/deploy-wordpress.mjs
-```
+After upload, verify:
 
-Publish the website only after reviewing the source:
-
-```shell
-WP_USERNAME="your-admin-user" \
-WP_APPLICATION_PASSWORD="your-application-password" \
-node website/deploy-wordpress.mjs --apply
-```
-
-The deployment updates WordPress page `7`, sets its title and slug to English,
-publishes the page, and sets the public site title and tagline. Credentials are
-read only from the current process environment.
+1. `https://0628dao.xyz/` returns the English 0628DAO homepage.
+2. The page title is `0628DAO — Open Infrastructure for AI-Agent Economies`.
+3. Mainnet and testnet explorer links open the intended contract addresses.
+4. Desktop and mobile layouts display without horizontal overflow.
