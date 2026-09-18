@@ -13,6 +13,7 @@
     "test": "hardhat test nodejs",
     "typecheck": "tsc --noEmit",
     "check": "npm run compile && npm run test && npm run typecheck",
+    "cmc:market-context": "node scripts/cmc-market-context.ts",
     "deploy:base-sepolia": "hardhat run scripts/deploy-base-sepolia.ts --network baseSepolia",
     "verify:base-sepolia": "npm run compile && node scripts/verify-base-sepolia.js"
   },

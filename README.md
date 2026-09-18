@@ -124,6 +124,24 @@ recipient is required.
 No private key, seed phrase, API secret, or funded production credential should
 ever be committed to this repository.
 
+## CoinMarketCap market context for DATCORE agents
+
+The repository includes a read-only CoinMarketCap API adapter for future
+DATCORE agent services. It returns normalized USD market context for Bitcoin,
+Ether, and USDC in one request. After DATCORE receives a CoinMarketCap numeric
+ID, the same request can include DATCORE by setting `CMC_DATCORE_ID`.
+
+Keep the API key outside the repository and run:
+
+```shell
+CMC_API_KEY=your_key npm run cmc:market-context
+```
+
+The command prints structured JSON suitable for an AI-agent input pipeline. It
+does not trade, move funds, control a wallet, or write on-chain state. The API
+key must never be placed in browser-side code, committed files, screenshots,
+issues, or chat messages.
+
 ## Patent status
 
 A U.S. provisional patent application concerning separate DAT protocol
