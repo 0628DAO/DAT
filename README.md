@@ -1,12 +1,12 @@
-# DATCORE (DAT) — Base Sepolia Public Testnet
+# DATCORE (DAT) — Base Mainnet
 
-**Repository status:** Public testnet deployed / on-chain tested / unaudited<br>
-**Test network:** Base Sepolia (chain ID `84532`)<br>
+**Repository status:** Base Mainnet deployed / source verified / Base Sepolia tested / unaudited<br>
+**Production network:** Base Mainnet (chain ID `8453`)<br>
 **Maintainer:** 0628DAO / AssetDeploy LLC (アセットデプロイ合同会社)
 
-This repository publishes the DATCORE fixed-supply ERC-20 source and a guarded
-Base Sepolia deployment path. It is intended for public testnet validation of
-the same base-token design used on Base Mainnet. Protocol, agent-service,
+This repository publishes the DATCORE fixed-supply ERC-20 source deployed on
+Base Mainnet, together with a guarded Base Sepolia path for public testnet
+validation. Protocol, agent-service,
 settlement, governance, and liquidity-state-transition logic remain separate
 from the base token.
 
@@ -67,7 +67,7 @@ token contract and must be evaluated from current on-chain records.
 | Contract release | [`732cac5`](https://github.com/0628DAO/DAT/commit/732cac5af6c09df6c254b43b0b878b97206af7e6) |
 | Deployment record | [`deployments/base-sepolia.json`](deployments/base-sepolia.json) |
 | Independent validation packet | [`BASE_SEPOLIA_VALIDATION.md`](BASE_SEPOLIA_VALIDATION.md) |
-| DApp URL | [0628dat.xyz](https://0628dat.xyz) |
+| DApp URL | [0628dat.xyz](https://0628dat.xyz) — Coming Soon |
 
 Live test transactions exercised direct transfer, holder burn, EIP-2612
 permit, allowance transfer, and allowance burn. Permit replay and zero-address
@@ -162,7 +162,7 @@ future patent rights.
 
 ## Official channels
 
-- DApp: [0628dat.xyz](https://0628dat.xyz)
+- DApp: [0628dat.xyz](https://0628dat.xyz) — Coming Soon
 - Website: [assetdeploy.xyz](https://assetdeploy.xyz)
 - DATCORE page: [assetdeploy.xyz/#datcore](https://assetdeploy.xyz/#datcore)
 - GitHub: [0628DAO](https://github.com/0628DAO)
